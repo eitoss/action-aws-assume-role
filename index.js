@@ -12,6 +12,8 @@ async function run() {
   if (region) {
     clientParams = { ...clientParams, region };
     cmd += ` --region ${region}`;
+  } else {
+    clientParams = { ...clientParams, region: "us-east-1" };
   }
 
   let assumeRoleParams = { RoleArn, RoleSessionName };
