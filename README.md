@@ -3,9 +3,9 @@
   <a href="https://github.com/eitoss/action-aws-assume-role/actions"><img alt="action-aws-assume-role status" src="https://github.com/eitoss/action-aws-assume-role/workflows/assume-role/badge.svg"></a>
 </p>
 
-# GitHub Action for AWS Assume Role
+# GitHub Action for AWS Assume Role in JavaScript
 
-A simple action, written in JavaScript, that runs `aws sts assume-role` and set environment variables:
+Run `aws sts assume-role` and set environment variables:
 
 - `AWS_ACCESS_KEY_ID`
 - `AWS_SECRET_ACCESS_KEY`

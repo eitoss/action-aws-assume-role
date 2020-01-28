@@ -1,4 +1,4 @@
-name: 'AWS AssumeRole action'
+name: 'AWS AssumeRole action in JavaScript'
 description: 'Run "aws sts assume-role" and set environment variables'
 branding:
   icon: 'terminal'

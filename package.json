@@ -1,7 +1,7 @@
 {
   "name": "action-aws-assume-role",
   "version": "1.2.0",
-  "description": "AWS AssumeRole action",
+  "description": "AWS AssumeRole action in JavaScript",
   "main": "index.js",
   "scripts": {
     "lint": "eslint index.js",
