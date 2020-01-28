@@ -12,8 +12,9 @@ async function run() {
   if (region) {
     clientParams = { ...clientParams, region };
     cmd += ` --region ${region}`;
-  } else {
+  } else if (!process.env.AWS_REGION) {
     clientParams = { ...clientParams, region: "us-east-1" };
+    cmd += ` --region ${clientParams.region}`;
   }
 
   let assumeRoleParams = { RoleArn, RoleSessionName };
