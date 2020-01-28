@@ -5,7 +5,7 @@
 
 # GitHub Action for AWS Assume Role
 
-Run `aws sts assume-role` and set environment variables, written in JavaScript for fast execution (< 1s):
+Run `aws sts assume-role` and set environment variables, written in JavaScript:
 
 - `AWS_ACCESS_KEY_ID`
 - `AWS_SECRET_ACCESS_KEY`
