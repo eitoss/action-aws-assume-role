@@ -13,6 +13,7 @@ jobs:
       with:
         role_arn: arn:aws:iam::217080158438:role/sts-test-role
         role_session_name: sts-test-session
+        region: us-east-1
         duration_seconds: 900
     - run: |
         aws sts get-caller-identity
