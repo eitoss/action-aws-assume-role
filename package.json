@@ -1,0 +1,35 @@
+{
+  "name": "action-aws-assume-role",
+  "version": "1.0.0",
+  "description": "AWS assume-role action",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint index.js",
+    "package": "ncc build index.js -o dist",
+    "test": "eslint index.js && jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eitoss/action-aws-assume-role.git"
+  },
+  "keywords": [
+    "GitHub",
+    "Actions",
+    "JavaScript"
+  ],
+  "author": "EITOSS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eitoss/action-aws-assume-role/issues"
+  },
+  "homepage": "https://github.com/eitoss/action-aws-assume-role#readme",
+  "dependencies": {
+    "@actions/core": "^1.1.1",
+    "@actions/exec": "^1.0.3"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.20.5",
+    "eslint": "^6.3.0",
+    "jest": "^24.9.0"
+  }
+}
