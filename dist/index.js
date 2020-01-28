@@ -953,7 +953,6 @@ async function run() {
   const role_arn = core.getInput('role_arn');
   const role_session_name = core.getInput('role_session_name');
   const duration_seconds = core.getInput('duration_seconds');
-  const silent = core.getInput('silent');
 
   let args = ['sts', 'assume-role'];
   if (role_arn) {
@@ -968,7 +967,6 @@ async function run() {
 
   try {
     await exec.exec('aws', args, {
-      silent: silent,
       listeners: {
         stdout: data => {
           const result = JSON.parse(data.toString());
