@@ -1,0 +1,21 @@
+name: 'AWS AssumeRole action'
+description: 'Run "aws sts assume-role" and set environment variables'
+branding:
+  icon: 'terminal'
+  color: 'gray-dark'
+inputs:
+  role_arn:
+    description: 'The Amazon Resource Name (ARN) of the role to assume.'
+    required: true
+  role_session_name:
+    description: 'An identifier for the assumed role session.'
+    required: true
+  duration-seconds:
+    description: 'The duration, in seconds, of the role session.'
+    required: false
+  silent:
+    description: 'Suppress log outputs.'
+    required: false
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
