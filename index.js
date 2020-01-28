@@ -2,20 +2,28 @@ const core = require('@actions/core');
 const { STSClient, AssumeRoleCommand } = require('@aws-sdk/client-sts-node');
 
 async function run() {
+  const region = core.getInput('region');
   const RoleArn = core.getInput('role_arn');
   const RoleSessionName = core.getInput('role_session_name');
   const DurationSeconds = core.getInput('duration_seconds');
 
-  let params = { RoleArn, RoleSessionName };
-  let cmd = `aws sts assume-role --role-arn ${RoleArn} --role-session-name ${RoleSessionName}`;
+  let clientParams = {};
+  let cmd = `aws`;
+  if (region) {
+    clientParams = { ...clientParams, region };
+    cmd += ` --region ${region}`;
+  }
+
+  let assumeRoleParams = { RoleArn, RoleSessionName };
+  cmd += ` sts assume-role --role-arn ${RoleArn} --role-session-name ${RoleSessionName}`;
   if (DurationSeconds) {
-    params = { ...params, DurationSeconds };
+    assumeRoleParams = { ...assumeRoleParams, DurationSeconds };
     cmd += ` --duration-seconds ${DurationSeconds}`;
   }
 
   try {
-    const client = new STSClient({});
-    const command = new AssumeRoleCommand(params);
+    const client = new STSClient(clientParams);
+    const command = new AssumeRoleCommand(assumeRoleParams);
     const result = await client.send(command);
     console.log(`[command]${cmd}`);
     console.log(`::add-mask::${result.Credentials.AccessKeyId}`);
