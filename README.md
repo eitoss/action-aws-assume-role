@@ -22,7 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: chrislennon/action-aws-cli@v1.1
-    - uses: eitoss/action-aws-assume-role@v1
+    - uses: eitoss/action-aws-assume-role@v1.1
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
