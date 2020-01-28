@@ -1,6 +1,6 @@
 {
   "name": "action-aws-assume-role",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "AWS AssumeRole action",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,7 @@
   "homepage": "https://github.com/eitoss/action-aws-assume-role#readme",
   "dependencies": {
     "@actions/core": "^1.1.1",
-    "@actions/exec": "^1.0.3"
+    "@aws-sdk/client-sts-node": "0.1.0-preview.6"
   },
   "devDependencies": {
     "@zeit/ncc": "^0.20.5",
